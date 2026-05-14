@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Отчет по проекту Minecraft Detection</title>
+    <style>
+        @page { size: A4; margin: 20mm; }
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #2e7d32;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        h1 { color: #2e7d32; margin-bottom: 4px; }
+        h2 {
+            border-left: 5px solid #2e7d32;
+            padding-left: 10px;
+            margin-top: 28px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f1f8e9;
+        }
+        .metric-box {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+        .images {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .img-card {
+            width: 48%;
+        }
+        .img-card img {
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        .caption {
+            text-align: center;
+            font-size: 14px;
+            color: #555;
+            margin-top: 8px;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 12px;
+            text-align: center;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Отчет по проекту: Детекция объектов в Minecraft</h1>
+        <p>Сравнение моделей FCOS и YOLOv8s</p>
+    </div>
+
+    <h2>1. Сводные метрики качества</h2>
+    <table>
+        <tr>
+            <th>Модель</th>
+            <th>mAP (0.5:0.95)</th>
+            <th>mAP_50</th>
+            <th>FPS</th>
+        </tr>
+        <tr>
+            <td>FCOS (ResNet-50)</td>
+            <td>0.34</td>
+            <td>0.664</td>
+            <td>2.79</td>
+        </tr>
+        <tr>
+            <td><b>YOLOv8s</b></td>
+            <td><b>0.551</b></td>
+            <td><b>0.787</b></td>
+            <td><b>30.11</b></td>
+        </tr>
+    </table>
+
+    <div class="metric-box">
+        <strong>Вывод по качеству:</strong>
+        YOLOv8s показала более высокую точность на тестовой выборке и заметно лучшую скорость инференса.
+    </div>
+
+    <h2>2. Анализ скорости инференса</h2>
+    <ul>
+        <li><strong>FCOS:</strong> около 3 FPS.</li>
+        <li><strong>YOLOv8s:</strong> около 30 FPS, что ближе к real-time сценарию.</li>
+    </ul>
+
+    <h2>3. Примеры детекции</h2>
+    <div class="images">
+        <div class="img-card">
+            <img src='file:///home/ubuntu/practicum_venv/artifacts/inference/fcos/result_0.jpg' alt='FCOS result'>
+            <div class="caption">Результат FCOS</div>
+        </div>
+        <div class="img-card">
+            <p>Изображение YOLO не найдено.</p>
+            <div class="caption">Результат YOLOv8s</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Сгенерировано автоматически в рамках учебного проекта. 2026</p>
+    </div>
+</body>
+</html>
