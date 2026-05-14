@@ -1,0 +1,26 @@
+# Абсолютные пути от корня проекта
+train: /home/ubuntu/practicum_venv/datasets/minecraft/train/images
+val: /home/ubuntu/practicum_venv/datasets/minecraft/valid/images
+test: /home/ubuntu/practicum_venv/datasets/minecraft/test/images
+
+nc: 18
+
+names:
+  0: pig
+  1: chicken
+  2: cow
+  3: zombie
+  4: skeleton
+  5: creeper
+  6: spider
+  7: turtle
+  8: llama
+  9: ghast
+  10: fox
+  11: frog
+  12: goat
+  13: sheep
+  14: bee
+  15: enderman
+  16: wolf
+  17: slime
